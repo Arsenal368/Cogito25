@@ -54,15 +54,15 @@ export function VisualEffects() {
         // Draw node
         ctx.beginPath();
         ctx.arc(node.x, node.y, node.radius, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(234,234,224,0.7)';
+        ctx.fillStyle = 'rgba(234,234,224,0.92)'; // bone white
         ctx.shadowColor = '#fff';
-        ctx.shadowBlur = 8;
+        ctx.shadowBlur = 10;
         ctx.fill();
         ctx.shadowBlur = 0;
       });
       // Draw connections
-      ctx.globalAlpha = 0.18;
-      ctx.strokeStyle = '#EAEAE0';
+      ctx.globalAlpha = 0.22;
+      ctx.strokeStyle = '#fff';
       nodes.forEach((node, i) => {
         for (let j = i + 1; j < nodes.length; j++) {
           const other = nodes[j];
