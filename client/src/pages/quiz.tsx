@@ -8,6 +8,7 @@ import { Label } from '@/components/ui/label';
 import { Progress } from '@/components/ui/progress';
 import { PoliticalCompass } from '@/components/political-compass';
 import { QuizQuestion, QuizAnswer, PoliticalLeanings } from '@/lib/types';
+import { VisualEffects } from '@/components/visual-effects';
 
 const questions: QuizQuestion[] = [
   {

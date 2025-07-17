@@ -9,6 +9,7 @@ import { Badge } from '@/components/ui/badge';
 import { Textarea } from '@/components/ui/textarea';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { BiasAnalysis } from '@/lib/types';
+import { VisualEffects } from '@/components/visual-effects';
 
 const mockBiasAnalysis: BiasAnalysis = {
   overallBias: 75,

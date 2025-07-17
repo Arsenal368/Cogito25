@@ -245,10 +245,11 @@
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, var(--accent), var(--olive-strong));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  /* background: linear-gradient(135deg, var(--accent), var(--olive-strong)); */
+  /* -webkit-background-clip: text; */
+  /* -webkit-text-fill-color: transparent; */
+  /* background-clip: text; */
+  color: var(--olive-strong); /* solid color for debugging */
 }
 
 .font-serif {
