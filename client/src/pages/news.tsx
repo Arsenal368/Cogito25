@@ -104,33 +104,31 @@ export default function News() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-bg-primary via-bg-secondary to-black pt-20 relative overflow-hidden">
+    <div className="min-h-screen bg-matte pt-20 relative overflow-hidden">
       <NewsBackgroundEffects />
       <div className="container mx-auto px-4 py-20 relative z-10">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h1 className="text-5xl font-display mb-6 text-sophisticated">
-              Explore News Through Multiple Lenses
-            </h1>
-            <p className="text-2xl text-elegant font-body max-w-3xl mx-auto leading-relaxed">
+            <h1 className="text-5xl olive-header mb-6">Explore News Through Multiple Lenses</h1>
+            <p className="text-2xl text-ivory font-body max-w-3xl mx-auto leading-relaxed">
               Search for current events and see how different perspectives cover the same story
             </p>
           </div>
 
           {/* Search Interface */}
-          <Card className="sophisticated-card rounded-3xl elegant-shadow p-10 mb-12">
+          <Card className="glass-card olive-border rounded-3xl p-10 mb-12">
             <CardContent className="p-0">
               <div className="flex flex-col md:flex-row gap-6 mb-8">
                 <div className="flex-1 relative">
-                  <Search className="absolute left-6 top-1/2 transform -translate-y-1/2 text-neutral-400 h-6 w-6" />
+                  <Search className="absolute left-6 top-1/2 transform -translate-y-1/2 text-sage h-6 w-6" />
                   <Input
                     placeholder="Search for news topics..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="elegant-input pl-16 pr-6 py-6 text-lg rounded-2xl font-body"
+                    className="glassy-input pl-16 pr-6 py-6 text-lg rounded-2xl font-body"
                   />
                 </div>
-                <Button className="sophisticated-button bg-accent text-black hover:bg-accent/90 px-10 py-6 rounded-2xl elegant-shadow font-heading">
+                <Button className="button-olive px-10 py-6 rounded-2xl font-heading">
                   <Search className="mr-3 h-6 w-6" />
                   Search News
                 </Button>
@@ -138,16 +136,14 @@ export default function News() {
 
               {/* Quick Topics */}
               <div className="flex flex-wrap gap-2 mb-6">
-                <span className="text-sm text-neutral-600 mr-4">Quick Topics:</span>
+                <span className="text-sm text-sage mr-4">Quick Topics:</span>
                 {quickTopics.map((topic) => (
                   <Button
                     key={topic}
                     variant="outline"
                     size="sm"
                     onClick={() => handleTopicClick(topic)}
-                    className={`rounded-full hover:bg-cogito-blue hover:text-white transition-colors ${
-                      selectedTopic === topic ? 'bg-cogito-blue text-white' : ''
-                    }`}
+                    className={`button-olive rounded-full font-heading ${selectedTopic === topic ? 'active' : ''}`}
                   >
                     {topic}
                   </Button>

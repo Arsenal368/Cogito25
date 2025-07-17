@@ -51,23 +51,21 @@ export default function BiasDetector() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-bg-primary via-bg-secondary to-black pt-20 relative overflow-hidden">
+    <div className="min-h-screen bg-matte pt-20 relative overflow-hidden">
       <VisualEffects />
       <div className="container mx-auto px-4 py-20 relative z-10">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
-            <h1 className="text-5xl font-display mb-6 text-sophisticated">Bias Detection Tool</h1>
-            <p className="text-2xl text-elegant font-body max-w-3xl mx-auto leading-relaxed">
+            <h1 className="text-5xl olive-header mb-6">Bias Detection Tool</h1>
+            <p className="text-2xl text-ivory font-body max-w-3xl mx-auto leading-relaxed">
               Analyze political bias in articles and news content using sophisticated AI algorithms
             </p>
           </div>
 
           {/* Input Section */}
-          <Card className="bg-white rounded-2xl shadow-lg mb-8">
+          <Card className="glass-card olive-border rounded-2xl mb-8">
             <CardHeader>
-              <CardTitle className="text-2xl font-semibold text-ink">
-                Analyze Content
-              </CardTitle>
+              <CardTitle className="text-2xl olive-header">Analyze Content</CardTitle>
             </CardHeader>
             <CardContent>
               <Tabs value={activeTab} onValueChange={setActiveTab}>
@@ -79,26 +77,18 @@ export default function BiasDetector() {
                 <TabsContent value="url" className="space-y-4">
                   <div className="flex flex-col md:flex-row gap-4">
                     <div className="flex-1 relative">
-                      <LinkIcon className="absolute left-4 top-1/2 transform -translate-y-1/2 text-neutral-400 h-5 w-5" />
+                      <LinkIcon className="absolute left-4 top-1/2 transform -translate-y-1/2 text-sage h-5 w-5" />
                       <Input
                         placeholder="Paste article URL here..."
                         value={url}
                         onChange={(e) => setUrl(e.target.value)}
-                        className="pl-12 pr-4 py-4 text-lg border-2 border-neutral-200 focus:border-cogito-blue"
+                        className="pl-12 pr-4 py-4 text-lg glassy-input"
                       />
                     </div>
-                    <Button 
-                      onClick={handleAnalyze}
-                      disabled={!url || isAnalyzing}
-                      className="bg-cogito-blue text-white hover:bg-blue-600 px-8 py-4"
-                    >
+                    <Button onClick={handleAnalyze} disabled={!url || isAnalyzing} className="button-olive px-8 py-4">
                       {isAnalyzing ? (
                         <>
-                          <motion.div
-                            className="mr-2 h-4 w-4 border-2 border-white border-t-transparent rounded-full"
-                            animate={{ rotate: 360 }}
-                            transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
-                          />
+                          <motion.div className="mr-2 h-4 w-4 border-2 border-olive border-t-transparent rounded-full" animate={{ rotate: 360 }} transition={{ duration: 1, repeat: Infinity, ease: 'linear' }} />
                           Analyzing...
                         </>
                       ) : (
@@ -116,21 +106,13 @@ export default function BiasDetector() {
                     placeholder="Paste article text here..."
                     value={textContent}
                     onChange={(e) => setTextContent(e.target.value)}
-                    className="min-h-[200px] border-2 border-neutral-200 focus:border-cogito-blue"
+                    className="min-h-[200px] glassy-input"
                   />
                   <div className="flex justify-end">
-                    <Button 
-                      onClick={handleAnalyze}
-                      disabled={!textContent || isAnalyzing}
-                      className="bg-cogito-blue text-white hover:bg-blue-600 px-8 py-4"
-                    >
+                    <Button onClick={handleAnalyze} disabled={!textContent || isAnalyzing} className="button-olive px-8 py-4">
                       {isAnalyzing ? (
                         <>
-                          <motion.div
-                            className="mr-2 h-4 w-4 border-2 border-white border-t-transparent rounded-full"
-                            animate={{ rotate: 360 }}
-                            transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
-                          />
+                          <motion.div className="mr-2 h-4 w-4 border-2 border-olive border-t-transparent rounded-full" animate={{ rotate: 360 }} transition={{ duration: 1, repeat: Infinity, ease: 'linear' }} />
                           Analyzing...
                         </>
                       ) : (
@@ -148,42 +130,25 @@ export default function BiasDetector() {
 
           {/* Results Section */}
           {analysisResult && (
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              <Card className="bg-white rounded-2xl shadow-lg">
+            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+              <Card className="glass-card olive-border rounded-2xl">
                 <CardHeader>
-                  <CardTitle className="text-2xl font-semibold text-ink flex items-center">
-                    <BarChart3 className="mr-3 h-6 w-6" />
-                    Analysis Results
-                  </CardTitle>
+                  <CardTitle className="text-2xl olive-header flex items-center"><BarChart3 className="mr-3 h-6 w-6 text-olive" />Analysis Results</CardTitle>
                 </CardHeader>
                 <CardContent>
                   {/* Overall Bias Score */}
                   <div className="mb-8">
                     <div className="flex items-center justify-between mb-4">
-                      <h3 className="text-xl font-semibold text-ink">Overall Bias Score</h3>
-                      <Badge 
-                        variant="secondary" 
-                        className={`text-lg px-4 py-2 ${getBiasLabel(analysisResult.overallBias).color}`}
-                      >
-                        {getBiasLabel(analysisResult.overallBias).label}
-                      </Badge>
+                      <h3 className="text-xl olive-header">Overall Bias Score</h3>
+                      <Badge variant="secondary" className="olive-tag text-lg px-4 py-2">{getBiasLabel(analysisResult.overallBias).label}</Badge>
                     </div>
                     <div className="relative">
-                      <Progress 
-                        value={analysisResult.overallBias} 
-                        className="h-4"
-                      />
+                      <Progress value={analysisResult.overallBias} className="h-4 olive-shadow" />
                       <div className="absolute inset-0 flex items-center justify-center">
-                        <span className="text-sm font-semibold text-white mix-blend-difference">
-                          {analysisResult.overallBias}%
-                        </span>
+                        <span className="text-sm font-semibold text-ivory mix-blend-difference">{analysisResult.overallBias}%</span>
                       </div>
                     </div>
-                    <div className="flex justify-between text-sm text-neutral-600 mt-2">
+                    <div className="flex justify-between text-sm text-sage mt-2">
                       <span>Unbiased</span>
                       <span>Highly Biased</span>
                     </div>
@@ -195,28 +160,20 @@ export default function BiasDetector() {
                     <div className="space-y-6">
                       <div>
                         <div className="flex justify-between items-center mb-2">
-                          <span className="text-sm text-neutral-600">Emotional Language</span>
-                          <span className="text-sm font-medium text-cogito-blue">
-                            {analysisResult.emotionalLanguage}%
-                          </span>
+                          <span className="text-sm text-sage">Emotional Language</span>
+                          <span className="text-sm font-medium text-olive">{analysisResult.emotionalLanguage}%</span>
                         </div>
-                        <Progress value={analysisResult.emotionalLanguage} className="h-2" />
-                        <p className="text-xs text-neutral-500 mt-1">
-                          High use of emotionally charged words and phrases
-                        </p>
+                        <Progress value={analysisResult.emotionalLanguage} className="h-2 olive-shadow" />
+                        <p className="text-xs text-ivory mt-1">High use of emotionally charged words and phrases</p>
                       </div>
                       
                       <div>
                         <div className="flex justify-between items-center mb-2">
-                          <span className="text-sm text-neutral-600">Factual Content</span>
-                          <span className="text-sm font-medium text-cogito-blue">
-                            {analysisResult.factualContent}%
-                          </span>
+                          <span className="text-sm text-sage">Factual Content</span>
+                          <span className="text-sm font-medium text-olive">{analysisResult.factualContent}%</span>
                         </div>
-                        <Progress value={analysisResult.factualContent} className="h-2" />
-                        <p className="text-xs text-neutral-500 mt-1">
-                          Moderate use of verifiable facts and statistics
-                        </p>
+                        <Progress value={analysisResult.factualContent} className="h-2 olive-shadow" />
+                        <p className="text-xs text-ivory mt-1">Moderate use of verifiable facts and statistics</p>
                       </div>
                     </div>
 
@@ -224,39 +181,31 @@ export default function BiasDetector() {
                     <div className="space-y-6">
                       <div>
                         <div className="flex justify-between items-center mb-2">
-                          <span className="text-sm text-neutral-600">Source Credibility</span>
-                          <span className="text-sm font-medium text-sage">
-                            {analysisResult.sourceCredibility}%
-                          </span>
+                          <span className="text-sm text-sage">Source Credibility</span>
+                          <span className="text-sm font-medium text-olive">{analysisResult.sourceCredibility}%</span>
                         </div>
-                        <Progress value={analysisResult.sourceCredibility} className="h-2" />
-                        <p className="text-xs text-neutral-500 mt-1">
-                          {getCredibilityLabel(analysisResult.sourceCredibility).label}
-                        </p>
+                        <Progress value={analysisResult.sourceCredibility} className="h-2 olive-shadow" />
+                        <p className="text-xs text-ivory mt-1">{getCredibilityLabel(analysisResult.sourceCredibility).label}</p>
                       </div>
                       
                       <div>
                         <div className="flex justify-between items-center mb-2">
-                          <span className="text-sm text-neutral-600">Balanced Reporting</span>
-                          <span className="text-sm font-medium text-sage">
-                            {analysisResult.balancedReporting}%
-                          </span>
+                          <span className="text-sm text-sage">Balanced Reporting</span>
+                          <span className="text-sm font-medium text-olive">{analysisResult.balancedReporting}%</span>
                         </div>
-                        <Progress value={analysisResult.balancedReporting} className="h-2" />
-                        <p className="text-xs text-neutral-500 mt-1">
-                          Limited presentation of multiple perspectives
-                        </p>
+                        <Progress value={analysisResult.balancedReporting} className="h-2 olive-shadow" />
+                        <p className="text-xs text-ivory mt-1">Limited presentation of multiple perspectives</p>
                       </div>
                     </div>
                   </div>
 
                   {/* Recommendations */}
                   <div className="mt-8 p-6 bg-neutral-50 rounded-lg">
-                    <h4 className="text-lg font-semibold text-ink mb-4 flex items-center">
+                    <h4 className="text-lg font-semibold text-ivory mb-4 flex items-center">
                       <AlertCircle className="mr-2 h-5 w-5" />
                       Recommendations
                     </h4>
-                    <ul className="space-y-2 text-sm text-neutral-700">
+                    <ul className="space-y-2 text-sm text-sage">
                       <li className="flex items-start">
                         <CheckCircle className="mr-2 h-4 w-4 text-green-600 mt-0.5" />
                         Consider reading articles from opposing viewpoints on this topic

@@ -185,8 +185,9 @@ export default function Quiz() {
 
   if (showResults && politicalLeanings) {
     return (
-      <div className="min-h-screen bg-neutral-50 pt-20">
-        <div className="container mx-auto px-4 py-20">
+      <div className="min-h-screen bg-matte pt-20 relative overflow-hidden">
+        <VisualEffects />
+        <div className="container mx-auto px-4 py-20 relative z-10">
           <div className="max-w-4xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -234,13 +235,13 @@ export default function Quiz() {
                             setShowResults(false);
                             setPoliticalLeanings(null);
                           }}
-                          className="w-full sophisticated-button bg-accent text-black hover:bg-accent/90 py-3 rounded-xl elegant-shadow font-heading"
+                          className="w-full button-glow"
                         >
                           Retake Quiz
                         </Button>
                         <Button 
                           variant="outline" 
-                          className="w-full sophisticated-button border-2 border-accent text-accent hover:bg-accent hover:text-black py-3 rounded-xl elegant-shadow font-heading"
+                          className="w-full button-glow"
                         >
                           Save Results
                         </Button>
@@ -261,13 +262,13 @@ export default function Quiz() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-bg-primary via-bg-secondary to-black pt-20 relative overflow-hidden">
+    <div className="min-h-screen bg-matte pt-20 relative overflow-hidden">
       <VisualEffects />
       <div className="container mx-auto px-4 py-20 relative z-10">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
-            <h1 className="text-5xl font-display mb-6 text-sophisticated">Discover Your Political Compass</h1>
-            <p className="text-2xl text-elegant font-body max-w-2xl mx-auto leading-relaxed">
+            <h1 className="text-5xl olive-header mb-6">Discover Your Political Compass</h1>
+            <p className="text-2xl text-ivory font-body max-w-2xl mx-auto leading-relaxed">
               A thoughtful assessment to understand your political leanings and worldview
             </p>
           </div>
@@ -331,7 +332,7 @@ export default function Quiz() {
                       variant="ghost"
                       onClick={handlePrevious}
                       disabled={currentQuestionIndex === 0}
-                      className="sophisticated-button text-elegant hover:text-accent px-6 py-3 rounded-xl font-heading"
+                      className="button-glow px-6 py-3 rounded-xl font-heading"
                     >
                       <ChevronLeft className="mr-2 h-5 w-5" />
                       Previous
@@ -340,7 +341,7 @@ export default function Quiz() {
                     <Button
                       onClick={handleNext}
                       disabled={selectedAnswer === null}
-                      className="sophisticated-button bg-accent text-black hover:bg-accent/90 px-8 py-3 rounded-xl elegant-shadow font-heading"
+                      className="button-glow px-8 py-3 rounded-xl font-heading"
                     >
                       {currentQuestionIndex === questions.length - 1 ? (
                         <>

@@ -26,7 +26,7 @@ export function Navigation() {
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center space-x-3">
             <div className="w-10 h-10 bg-gradient-to-br from-accent to-olive-strong rounded-xl flex items-center justify-center elegant-shadow">
-              <Brain className="w-6 h-6 text-black" />
+              <Brain className="w-6 h-6 text-white" />
             </div>
             <span className="text-3xl font-display text-sophisticated">Cogito</span>
           </Link>
@@ -50,17 +50,17 @@ export function Navigation() {
           <div className="flex items-center space-x-6">
             <Button
               variant="ghost"
-              className="hidden md:block text-elegant hover:text-accent font-heading sophisticated-button"
+              className="hidden md:block button-glow font-heading"
             >
               Sign In
             </Button>
-            <Button className="sophisticated-button bg-accent text-black hover:bg-accent/90 px-6 py-3 rounded-xl elegant-shadow font-heading">
+            <Button className="button-glow px-6 py-3 rounded-xl font-heading">
               Get Started
             </Button>
             <Button
               variant="ghost"
               size="icon"
-              className="md:hidden sophisticated-button"
+              className="md:hidden button-glow"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
               {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
