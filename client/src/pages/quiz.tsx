@@ -263,10 +263,10 @@ export default function Quiz() {
     <div className="min-h-screen bg-neutral-50 pt-20">
       <div className="container mx-auto px-4 py-20">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold mb-4 text-ink">Discover Your Political Compass</h1>
-            <p className="text-xl text-neutral-600">
-              A thoughtful assessment to understand your political leanings
+          <div className="text-center mb-16">
+            <h1 className="text-5xl font-display mb-6 text-sophisticated">Discover Your Political Compass</h1>
+            <p className="text-2xl text-elegant font-body max-w-2xl mx-auto leading-relaxed">
+              A thoughtful assessment to understand your political leanings and worldview
             </p>
           </div>
 
@@ -278,24 +278,24 @@ export default function Quiz() {
               exit={{ opacity: 0, x: -50 }}
               transition={{ duration: 0.3 }}
             >
-              <Card className="bg-white rounded-2xl shadow-lg p-8">
+              <Card className="sophisticated-card rounded-3xl elegant-shadow p-10">
                 <CardContent>
                   {/* Progress */}
-                  <div className="mb-8">
-                    <div className="flex justify-between items-center mb-2">
-                      <span className="text-sm font-medium text-neutral-600">
+                  <div className="mb-12">
+                    <div className="flex justify-between items-center mb-4">
+                      <span className="text-base font-heading text-elegant">
                         Question {currentQuestionIndex + 1} of {questions.length}
                       </span>
-                      <span className="text-sm font-medium text-neutral-600">
+                      <span className="text-base font-heading text-elegant">
                         {Math.round(progress)}%
                       </span>
                     </div>
-                    <Progress value={progress} className="w-full" />
+                    <Progress value={progress} className="w-full h-3 rounded-full" />
                   </div>
 
                   {/* Question */}
-                  <div className="mb-8">
-                    <h3 className="text-2xl font-semibold mb-6 text-ink leading-relaxed">
+                  <div className="mb-12">
+                    <h3 className="text-3xl font-heading mb-8 text-sophisticated leading-relaxed">
                       {currentQuestion.text}
                     </h3>
                     
@@ -305,15 +305,15 @@ export default function Quiz() {
                     >
                       <div className="space-y-4">
                         {answerOptions.map((option) => (
-                          <div key={option.value} className="flex items-center space-x-3">
+                          <div key={option.value} className="flex items-center space-x-4">
                             <RadioGroupItem 
                               value={option.value.toString()} 
                               id={option.value.toString()}
-                              className="text-cogito-blue"
+                              className="text-cogito-blue w-5 h-5"
                             />
                             <Label 
                               htmlFor={option.value.toString()}
-                              className="text-lg cursor-pointer flex-1 p-4 border-2 border-neutral-200 rounded-lg hover:border-cogito-blue transition-colors"
+                              className="text-lg font-body cursor-pointer flex-1 p-6 border-2 border-neutral-200 rounded-2xl hover:border-cogito-blue hover:bg-cogito-blue/5 transition-all duration-300 elegant-shadow"
                             >
                               {option.text}
                             </Label>
@@ -329,26 +329,26 @@ export default function Quiz() {
                       variant="ghost"
                       onClick={handlePrevious}
                       disabled={currentQuestionIndex === 0}
-                      className="text-neutral-600 hover:text-cogito-blue"
+                      className="sophisticated-button text-elegant hover:text-cogito-blue px-6 py-3 rounded-xl font-heading"
                     >
-                      <ChevronLeft className="mr-2 h-4 w-4" />
+                      <ChevronLeft className="mr-2 h-5 w-5" />
                       Previous
                     </Button>
                     
                     <Button
                       onClick={handleNext}
                       disabled={selectedAnswer === null}
-                      className="bg-cogito-blue text-white hover:bg-blue-600"
+                      className="sophisticated-button bg-cogito-blue text-white hover:bg-blue-600 px-8 py-3 rounded-xl elegant-shadow font-heading"
                     >
                       {currentQuestionIndex === questions.length - 1 ? (
                         <>
                           Finish
-                          <Check className="ml-2 h-4 w-4" />
+                          <Check className="ml-2 h-5 w-5" />
                         </>
                       ) : (
                         <>
                           Next
-                          <ChevronRight className="ml-2 h-4 w-4" />
+                          <ChevronRight className="ml-2 h-5 w-5" />
                         </>
                       )}
                     </Button>

@@ -7,6 +7,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Badge } from '@/components/ui/badge';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { ArticleCard } from '@/components/article-card';
+import { NewsBackgroundEffects } from '@/components/visual-effects';
 import { NewsArticle } from '@/lib/types';
 
 // Mock data for demonstration
@@ -103,33 +104,34 @@ export default function News() {
   };
 
   return (
-    <div className="min-h-screen bg-alabaster pt-20">
-      <div className="container mx-auto px-4 py-20">
+    <div className="min-h-screen bg-gradient-to-br from-alabaster via-white to-neutral-50 pt-20 relative overflow-hidden">
+      <NewsBackgroundEffects />
+      <div className="container mx-auto px-4 py-20 relative z-10">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold mb-4 text-ink">
+          <div className="text-center mb-16">
+            <h1 className="text-5xl font-display mb-6 text-sophisticated">
               Explore News Through Multiple Lenses
             </h1>
-            <p className="text-xl text-neutral-600">
+            <p className="text-2xl text-elegant font-body max-w-3xl mx-auto leading-relaxed">
               Search for current events and see how different perspectives cover the same story
             </p>
           </div>
 
           {/* Search Interface */}
-          <Card className="bg-white rounded-2xl shadow-lg p-8 mb-8">
+          <Card className="sophisticated-card rounded-3xl elegant-shadow p-10 mb-12">
             <CardContent className="p-0">
-              <div className="flex flex-col md:flex-row gap-4 mb-6">
+              <div className="flex flex-col md:flex-row gap-6 mb-8">
                 <div className="flex-1 relative">
-                  <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-neutral-400 h-5 w-5" />
+                  <Search className="absolute left-6 top-1/2 transform -translate-y-1/2 text-neutral-400 h-6 w-6" />
                   <Input
                     placeholder="Search for news topics..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="pl-12 pr-4 py-4 text-lg border-2 border-neutral-200 focus:border-cogito-blue"
+                    className="elegant-input pl-16 pr-6 py-6 text-lg rounded-2xl font-body"
                   />
                 </div>
-                <Button className="bg-cogito-blue text-white hover:bg-blue-600 px-8 py-4">
-                  <Search className="mr-2 h-5 w-5" />
+                <Button className="sophisticated-button bg-cogito-blue text-white hover:bg-blue-600 px-10 py-6 rounded-2xl elegant-shadow font-heading">
+                  <Search className="mr-3 h-6 w-6" />
                   Search News
                 </Button>
               </div>

@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { PoliticalCompass } from '@/components/political-compass';
+import { VisualEffects } from '@/components/visual-effects';
 import { PoliticalLeanings, ReadingStats } from '@/lib/types';
 
 // Mock data for demonstration
@@ -55,12 +56,13 @@ const mockRecentActivity = [
 
 export default function Dashboard() {
   return (
-    <div className="min-h-screen bg-neutral-50 pt-20">
-      <div className="container mx-auto px-4 py-20">
+    <div className="min-h-screen bg-gradient-to-br from-neutral-50 via-white to-alabaster pt-20 relative overflow-hidden">
+      <VisualEffects />
+      <div className="container mx-auto px-4 py-20 relative z-10">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold mb-4 text-ink">Your Perspective Dashboard</h1>
-            <p className="text-xl text-neutral-600">
+          <div className="text-center mb-16">
+            <h1 className="text-5xl font-display mb-6 text-sophisticated">Your Perspective Dashboard</h1>
+            <p className="text-2xl text-elegant font-body max-w-2xl mx-auto leading-relaxed">
               Track your political journey and reading habits
             </p>
           </div>

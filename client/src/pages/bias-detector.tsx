@@ -53,10 +53,10 @@ export default function BiasDetector() {
     <div className="min-h-screen bg-neutral-50 pt-20">
       <div className="container mx-auto px-4 py-20">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold mb-4 text-ink">Bias Detection Tool</h1>
-            <p className="text-xl text-neutral-600">
-              Analyze political bias in articles and news content using AI
+          <div className="text-center mb-16">
+            <h1 className="text-5xl font-display mb-6 text-sophisticated">Bias Detection Tool</h1>
+            <p className="text-2xl text-elegant font-body max-w-3xl mx-auto leading-relaxed">
+              Analyze political bias in articles and news content using sophisticated AI algorithms
             </p>
           </div>
 
