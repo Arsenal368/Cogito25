@@ -6,7 +6,10 @@ export function VisualEffects() {
     <div className="fixed inset-0 pointer-events-none overflow-hidden">
       {/* Animated gradient orbs */}
       <motion.div
-        className="absolute -top-40 -right-40 w-80 h-80 rounded-full bg-gradient-to-br from-cogito-blue/20 to-transparent blur-3xl"
+        className="absolute -top-40 -right-40 w-80 h-80 rounded-full blur-3xl"
+        style={{ 
+          background: 'radial-gradient(circle, rgba(196, 255, 116, 0.3) 0%, transparent 70%)'
+        }}
         animate={{
           scale: [1, 1.2, 1],
           opacity: [0.3, 0.5, 0.3],
@@ -19,7 +22,10 @@ export function VisualEffects() {
       />
       
       <motion.div
-        className="absolute -bottom-40 -left-40 w-96 h-96 rounded-full bg-gradient-to-tr from-sage/20 to-transparent blur-3xl"
+        className="absolute -bottom-40 -left-40 w-96 h-96 rounded-full blur-3xl"
+        style={{ 
+          background: 'radial-gradient(circle, rgba(85, 107, 47, 0.3) 0%, transparent 70%)'
+        }}
         animate={{
           scale: [1, 0.8, 1],
           opacity: [0.2, 0.4, 0.2],
@@ -33,7 +39,8 @@ export function VisualEffects() {
       
       {/* Floating geometric shapes */}
       <motion.div
-        className="absolute top-1/4 left-1/6 w-16 h-16 border border-cogito-blue/30 rounded-full"
+        className="absolute top-1/4 left-1/6 w-16 h-16 rounded-full"
+        style={{ border: '1px solid rgba(196, 255, 116, 0.4)' }}
         animate={{
           rotate: 360,
           y: [-10, 10, -10],
@@ -45,7 +52,8 @@ export function VisualEffects() {
       />
       
       <motion.div
-        className="absolute top-2/3 right-1/4 w-12 h-12 border border-sage/30 rounded-lg"
+        className="absolute top-2/3 right-1/4 w-12 h-12 rounded-lg"
+        style={{ border: '1px solid rgba(85, 107, 47, 0.4)' }}
         animate={{
           rotate: -360,
           x: [-15, 15, -15],
@@ -57,7 +65,8 @@ export function VisualEffects() {
       />
       
       <motion.div
-        className="absolute bottom-1/4 left-3/4 w-8 h-8 bg-cogito-blue/20 rounded-full"
+        className="absolute bottom-1/4 left-3/4 w-8 h-8 rounded-full"
+        style={{ backgroundColor: 'rgba(196, 255, 116, 0.3)' }}
         animate={{
           scale: [1, 1.5, 1],
           opacity: [0.3, 0.6, 0.3],
@@ -70,7 +79,8 @@ export function VisualEffects() {
       />
       
       <motion.div
-        className="absolute top-1/3 right-1/6 w-6 h-6 bg-sage/20 rounded-full"
+        className="absolute top-1/3 right-1/6 w-6 h-6 rounded-full"
+        style={{ backgroundColor: 'rgba(85, 107, 47, 0.3)' }}
         animate={{
           scale: [1, 1.2, 1],
           opacity: [0.4, 0.7, 0.4],
@@ -83,9 +93,9 @@ export function VisualEffects() {
       />
       
       {/* Subtle grid pattern */}
-      <div className="absolute inset-0 opacity-5">
+      <div className="absolute inset-0 opacity-10">
         <div className="w-full h-full" style={{
-          backgroundImage: `radial-gradient(circle, #0C6CF5 1px, transparent 1px)`,
+          backgroundImage: `radial-gradient(circle, rgba(196, 255, 116, 0.3) 1px, transparent 1px)`,
           backgroundSize: '40px 40px'
         }} />
       </div>
@@ -98,7 +108,10 @@ export function NewsBackgroundEffects() {
     <div className="absolute inset-0 pointer-events-none overflow-hidden">
       {/* Newspaper-inspired elements */}
       <motion.div
-        className="absolute top-20 left-10 w-64 h-1 bg-gradient-to-r from-cogito-blue/30 to-transparent"
+        className="absolute top-20 left-10 w-64 h-1"
+        style={{ 
+          background: 'linear-gradient(to right, rgba(196, 255, 116, 0.4), transparent)'
+        }}
         animate={{
           width: [256, 300, 256],
           opacity: [0.3, 0.5, 0.3],
@@ -111,7 +124,10 @@ export function NewsBackgroundEffects() {
       />
       
       <motion.div
-        className="absolute top-40 right-20 w-48 h-1 bg-gradient-to-l from-sage/30 to-transparent"
+        className="absolute top-40 right-20 w-48 h-1"
+        style={{ 
+          background: 'linear-gradient(to left, rgba(85, 107, 47, 0.4), transparent)'
+        }}
         animate={{
           width: [192, 240, 192],
           opacity: [0.2, 0.4, 0.2],
@@ -125,7 +141,8 @@ export function NewsBackgroundEffects() {
       
       {/* Perspective lines */}
       <motion.div
-        className="absolute top-60 left-1/4 w-32 h-32 border border-cogito-blue/20 rounded-full"
+        className="absolute top-60 left-1/4 w-32 h-32 rounded-full"
+        style={{ border: '1px solid rgba(196, 255, 116, 0.3)' }}
         animate={{
           scale: [1, 1.1, 1],
           rotate: 360,
@@ -137,7 +154,8 @@ export function NewsBackgroundEffects() {
       />
       
       <motion.div
-        className="absolute bottom-40 right-1/3 w-24 h-24 border border-sage/20 rounded-lg"
+        className="absolute bottom-40 right-1/3 w-24 h-24 rounded-lg"
+        style={{ border: '1px solid rgba(85, 107, 47, 0.3)' }}
         animate={{
           scale: [1, 0.9, 1],
           rotate: -360,
@@ -186,7 +204,7 @@ export function ParticleSystem() {
         vx: (Math.random() - 0.5) * 0.3,
         vy: (Math.random() - 0.5) * 0.3,
         size: Math.random() * 3 + 1,
-        color: Math.random() > 0.5 ? '#0C6CF5' : '#3BAF8E',
+        color: Math.random() > 0.5 ? '#C4FF74' : '#556B2F',
         opacity: Math.random() * 0.4 + 0.1
       });
     }

@@ -44,7 +44,7 @@ export function ThoughtNode() {
         position: 'fixed',
         width: '8px',
         height: '8px',
-        background: 'radial-gradient(circle, rgba(12,108,245,0.6) 0%, rgba(12,108,245,0.2) 70%, transparent 100%)',
+        background: 'radial-gradient(circle, rgba(196, 255, 116, 0.8) 0%, rgba(196, 255, 116, 0.3) 70%, transparent 100%)',
         borderRadius: '50%',
         pointerEvents: 'none',
         zIndex: 9999,

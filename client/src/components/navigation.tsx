@@ -25,8 +25,8 @@ export function Navigation() {
       <nav className="container mx-auto px-6 py-5">
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-gradient-to-br from-cogito-blue to-blue-600 rounded-xl flex items-center justify-center elegant-shadow">
-              <Brain className="w-6 h-6 text-white" />
+            <div className="w-10 h-10 bg-gradient-to-br from-accent to-olive-strong rounded-xl flex items-center justify-center elegant-shadow">
+              <Brain className="w-6 h-6 text-black" />
             </div>
             <span className="text-3xl font-display text-sophisticated">Cogito</span>
           </Link>
@@ -38,8 +38,8 @@ export function Navigation() {
                 href={item.href}
                 className={`text-base font-heading transition-all duration-300 animated-underline ${
                   isActive(item.href)
-                    ? 'text-cogito-blue'
-                    : 'text-elegant hover:text-cogito-blue'
+                    ? 'text-accent'
+                    : 'text-elegant hover:text-accent'
                 }`}
               >
                 {item.label}
@@ -50,11 +50,11 @@ export function Navigation() {
           <div className="flex items-center space-x-6">
             <Button
               variant="ghost"
-              className="hidden md:block text-elegant hover:text-cogito-blue font-heading sophisticated-button"
+              className="hidden md:block text-elegant hover:text-accent font-heading sophisticated-button"
             >
               Sign In
             </Button>
-            <Button className="sophisticated-button bg-cogito-blue text-white hover:bg-blue-600 px-6 py-3 rounded-xl elegant-shadow font-heading">
+            <Button className="sophisticated-button bg-accent text-black hover:bg-accent/90 px-6 py-3 rounded-xl elegant-shadow font-heading">
               Get Started
             </Button>
             <Button

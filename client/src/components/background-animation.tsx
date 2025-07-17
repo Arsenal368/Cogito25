@@ -39,7 +39,7 @@ export function BackgroundAnimation() {
         speedX: (Math.random() - 0.5) * 0.5,
         speedY: (Math.random() - 0.5) * 0.5,
         opacity: Math.random() * 0.3 + 0.1,
-        color: Math.random() > 0.5 ? '#0C6CF5' : '#3BAF8E'
+        color: Math.random() > 0.5 ? '#C4FF74' : '#556B2F'
       });
     }
     
@@ -67,8 +67,8 @@ export function BackgroundAnimation() {
       });
       
       // Draw connections
-      ctx.globalAlpha = 0.1;
-      ctx.strokeStyle = '#0C6CF5';
+      ctx.globalAlpha = 0.15;
+      ctx.strokeStyle = '#C4FF74';
       ctx.lineWidth = 1;
       
       particles.forEach((particle, i) => {
@@ -107,7 +107,8 @@ export function BackgroundAnimation() {
       
       {/* Floating geometric shapes */}
       <motion.div
-        className="absolute top-1/4 left-1/4 w-32 h-32 border-2 border-cogito-blue/20 rounded-full"
+        className="absolute top-1/4 left-1/4 w-32 h-32 rounded-full"
+        style={{ border: '2px solid rgba(196, 255, 116, 0.3)' }}
         animate={{
           rotate: 360,
           scale: [1, 1.1, 1],
@@ -120,7 +121,8 @@ export function BackgroundAnimation() {
       />
       
       <motion.div
-        className="absolute top-3/4 right-1/4 w-24 h-24 border-2 border-sage/20 rounded-lg"
+        className="absolute top-3/4 right-1/4 w-24 h-24 rounded-lg"
+        style={{ border: '2px solid rgba(85, 107, 47, 0.3)' }}
         animate={{
           rotate: -360,
           scale: [1, 0.9, 1],
@@ -133,7 +135,10 @@ export function BackgroundAnimation() {
       />
       
       <motion.div
-        className="absolute top-1/2 left-3/4 w-20 h-20 bg-gradient-to-br from-cogito-blue/10 to-sage/10 rounded-full blur-sm"
+        className="absolute top-1/2 left-3/4 w-20 h-20 rounded-full blur-sm"
+        style={{ 
+          background: 'linear-gradient(135deg, rgba(196, 255, 116, 0.2), rgba(85, 107, 47, 0.2))'
+        }}
         animate={{
           y: [-20, 20, -20],
           opacity: [0.3, 0.7, 0.3],
@@ -146,7 +151,10 @@ export function BackgroundAnimation() {
       />
       
       <motion.div
-        className="absolute bottom-1/4 left-1/2 w-16 h-16 bg-gradient-to-tr from-sage/10 to-cogito-blue/10 rounded-full blur-sm"
+        className="absolute bottom-1/4 left-1/2 w-16 h-16 rounded-full blur-sm"
+        style={{ 
+          background: 'linear-gradient(135deg, rgba(85, 107, 47, 0.2), rgba(196, 255, 116, 0.2))'
+        }}
         animate={{
           x: [-30, 30, -30],
           opacity: [0.2, 0.5, 0.2],

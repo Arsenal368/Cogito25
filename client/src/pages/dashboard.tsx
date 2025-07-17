@@ -56,7 +56,7 @@ const mockRecentActivity = [
 
 export default function Dashboard() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-neutral-50 via-white to-alabaster pt-20 relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-bg-primary via-bg-secondary to-black pt-20 relative overflow-hidden">
       <VisualEffects />
       <div className="container mx-auto px-4 py-20 relative z-10">
         <div className="max-w-6xl mx-auto">

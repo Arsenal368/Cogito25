@@ -104,7 +104,7 @@ export default function News() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-alabaster via-white to-neutral-50 pt-20 relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-bg-primary via-bg-secondary to-black pt-20 relative overflow-hidden">
       <NewsBackgroundEffects />
       <div className="container mx-auto px-4 py-20 relative z-10">
         <div className="max-w-6xl mx-auto">
@@ -130,7 +130,7 @@ export default function News() {
                     className="elegant-input pl-16 pr-6 py-6 text-lg rounded-2xl font-body"
                   />
                 </div>
-                <Button className="sophisticated-button bg-cogito-blue text-white hover:bg-blue-600 px-10 py-6 rounded-2xl elegant-shadow font-heading">
+                <Button className="sophisticated-button bg-accent text-black hover:bg-accent/90 px-10 py-6 rounded-2xl elegant-shadow font-heading">
                   <Search className="mr-3 h-6 w-6" />
                   Search News
                 </Button>

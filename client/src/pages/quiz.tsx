@@ -233,13 +233,13 @@ export default function Quiz() {
                             setShowResults(false);
                             setPoliticalLeanings(null);
                           }}
-                          className="w-full bg-cogito-blue text-white hover:bg-blue-600"
+                          className="w-full sophisticated-button bg-accent text-black hover:bg-accent/90 py-3 rounded-xl elegant-shadow font-heading"
                         >
                           Retake Quiz
                         </Button>
                         <Button 
                           variant="outline" 
-                          className="w-full border-cogito-blue text-cogito-blue hover:bg-cogito-blue hover:text-white"
+                          className="w-full sophisticated-button border-2 border-accent text-accent hover:bg-accent hover:text-black py-3 rounded-xl elegant-shadow font-heading"
                         >
                           Save Results
                         </Button>
@@ -260,8 +260,9 @@ export default function Quiz() {
   }
 
   return (
-    <div className="min-h-screen bg-neutral-50 pt-20">
-      <div className="container mx-auto px-4 py-20">
+    <div className="min-h-screen bg-gradient-to-br from-bg-primary via-bg-secondary to-black pt-20 relative overflow-hidden">
+      <VisualEffects />
+      <div className="container mx-auto px-4 py-20 relative z-10">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
             <h1 className="text-5xl font-display mb-6 text-sophisticated">Discover Your Political Compass</h1>
@@ -309,11 +310,11 @@ export default function Quiz() {
                             <RadioGroupItem 
                               value={option.value.toString()} 
                               id={option.value.toString()}
-                              className="text-cogito-blue w-5 h-5"
+                              className="text-accent w-5 h-5"
                             />
                             <Label 
                               htmlFor={option.value.toString()}
-                              className="text-lg font-body cursor-pointer flex-1 p-6 border-2 border-neutral-200 rounded-2xl hover:border-cogito-blue hover:bg-cogito-blue/5 transition-all duration-300 elegant-shadow"
+                              className="text-lg font-body cursor-pointer flex-1 p-6 border-2 border-border rounded-2xl hover:border-accent hover:bg-accent/10 transition-all duration-300 elegant-shadow"
                             >
                               {option.text}
                             </Label>
@@ -329,7 +330,7 @@ export default function Quiz() {
                       variant="ghost"
                       onClick={handlePrevious}
                       disabled={currentQuestionIndex === 0}
-                      className="sophisticated-button text-elegant hover:text-cogito-blue px-6 py-3 rounded-xl font-heading"
+                      className="sophisticated-button text-elegant hover:text-accent px-6 py-3 rounded-xl font-heading"
                     >
                       <ChevronLeft className="mr-2 h-5 w-5" />
                       Previous
@@ -338,7 +339,7 @@ export default function Quiz() {
                     <Button
                       onClick={handleNext}
                       disabled={selectedAnswer === null}
-                      className="sophisticated-button bg-cogito-blue text-white hover:bg-blue-600 px-8 py-3 rounded-xl elegant-shadow font-heading"
+                      className="sophisticated-button bg-accent text-black hover:bg-accent/90 px-8 py-3 rounded-xl elegant-shadow font-heading"
                     >
                       {currentQuestionIndex === questions.length - 1 ? (
                         <>

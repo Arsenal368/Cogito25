@@ -31,9 +31,9 @@ export function HeroSection() {
   return (
     <section className="min-h-screen flex items-center justify-center grain-overlay pt-20 relative overflow-hidden">
       {/* Sophisticated background elements */}
-      <div className="absolute inset-0 bg-gradient-to-br from-alabaster via-white to-neutral-100 opacity-60" />
-      <div className="absolute top-20 left-10 w-72 h-72 bg-cogito-blue/5 rounded-full blur-3xl animate-pulse-slow" />
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-sage/5 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '2s' }} />
+      <div className="absolute inset-0 bg-gradient-to-br from-bg-primary via-bg-secondary to-black opacity-60" />
+      <div className="absolute top-20 left-10 w-72 h-72 rounded-full blur-3xl animate-pulse-slow" style={{ background: 'radial-gradient(circle, rgba(196, 255, 116, 0.2) 0%, transparent 70%)' }} />
+      <div className="absolute bottom-20 right-10 w-96 h-96 rounded-full blur-3xl animate-pulse-slow" style={{ background: 'radial-gradient(circle, rgba(85, 107, 47, 0.2) 0%, transparent 70%)', animationDelay: '2s' }} />
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-5xl mx-auto text-center">
@@ -89,7 +89,7 @@ export function HeroSection() {
             <Link href="/quiz">
               <Button 
                 size="lg" 
-                className="sophisticated-button bg-cogito-blue text-white hover:bg-blue-600 px-8 py-4 rounded-xl elegant-shadow"
+                className="sophisticated-button bg-accent text-black hover:bg-accent/90 px-8 py-4 rounded-xl elegant-shadow"
               >
                 <Brain className="mr-3 h-5 w-5" />
                 <span className="font-heading">Assess Your Perspective</span>
@@ -99,7 +99,7 @@ export function HeroSection() {
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="sophisticated-button border-2 border-cogito-blue text-cogito-blue hover:bg-cogito-blue hover:text-white px-8 py-4 rounded-xl elegant-shadow"
+                className="sophisticated-button border-2 border-accent text-accent hover:bg-accent hover:text-black px-8 py-4 rounded-xl elegant-shadow"
               >
                 <Newspaper className="mr-3 h-5 w-5" />
                 <span className="font-heading">Explore News</span>
